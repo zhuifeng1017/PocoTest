@@ -1,0 +1,306 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AAF35C0017532ED900A59F2E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF35BFF17532ED900A59F2E /* UIKit.framework */; };
+		AAF35C0217532ED900A59F2E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF35C0117532ED900A59F2E /* Foundation.framework */; };
+		AAF35C0417532ED900A59F2E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF35C0317532ED900A59F2E /* CoreGraphics.framework */; };
+		AAF35C0A17532EDA00A59F2E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AAF35C0817532EDA00A59F2E /* InfoPlist.strings */; };
+		AAF35C0C17532EDA00A59F2E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF35C0B17532EDA00A59F2E /* main.m */; };
+		AAF35C1017532EDA00A59F2E /* MZAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF35C0F17532EDA00A59F2E /* MZAppDelegate.m */; };
+		AAF35C1217532EDA00A59F2E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AAF35C1117532EDA00A59F2E /* Default.png */; };
+		AAF35C1417532EDA00A59F2E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AAF35C1317532EDA00A59F2E /* Default@2x.png */; };
+		AAF35C1617532EDA00A59F2E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AAF35C1517532EDA00A59F2E /* Default-568h@2x.png */; };
+		AAF35C1917532EDA00A59F2E /* MZViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF35C1817532EDA00A59F2E /* MZViewController.m */; };
+		AAF35C1C17532EDA00A59F2E /* MZViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAF35C1A17532EDA00A59F2E /* MZViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AAF35BFC17532ED900A59F2E /* PocoTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocoTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAF35BFF17532ED900A59F2E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		AAF35C0117532ED900A59F2E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AAF35C0317532ED900A59F2E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		AAF35C0717532EDA00A59F2E /* PocoTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PocoTest-Info.plist"; sourceTree = "<group>"; };
+		AAF35C0917532EDA00A59F2E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AAF35C0B17532EDA00A59F2E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AAF35C0D17532EDA00A59F2E /* PocoTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PocoTest-Prefix.pch"; sourceTree = "<group>"; };
+		AAF35C0E17532EDA00A59F2E /* MZAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MZAppDelegate.h; sourceTree = "<group>"; };
+		AAF35C0F17532EDA00A59F2E /* MZAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MZAppDelegate.m; sourceTree = "<group>"; };
+		AAF35C1117532EDA00A59F2E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		AAF35C1317532EDA00A59F2E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		AAF35C1517532EDA00A59F2E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		AAF35C1717532EDA00A59F2E /* MZViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MZViewController.h; sourceTree = "<group>"; };
+		AAF35C1817532EDA00A59F2E /* MZViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MZViewController.m; sourceTree = "<group>"; };
+		AAF35C1B17532EDA00A59F2E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MZViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AAF35BF917532ED900A59F2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAF35C0017532ED900A59F2E /* UIKit.framework in Frameworks */,
+				AAF35C0217532ED900A59F2E /* Foundation.framework in Frameworks */,
+				AAF35C0417532ED900A59F2E /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AAF35BF317532ED900A59F2E = {
+			isa = PBXGroup;
+			children = (
+				AAF35C0517532ED900A59F2E /* PocoTest */,
+				AAF35BFE17532ED900A59F2E /* Frameworks */,
+				AAF35BFD17532ED900A59F2E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AAF35BFD17532ED900A59F2E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AAF35BFC17532ED900A59F2E /* PocoTest.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AAF35BFE17532ED900A59F2E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AAF35BFF17532ED900A59F2E /* UIKit.framework */,
+				AAF35C0117532ED900A59F2E /* Foundation.framework */,
+				AAF35C0317532ED900A59F2E /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AAF35C0517532ED900A59F2E /* PocoTest */ = {
+			isa = PBXGroup;
+			children = (
+				AAF35C0E17532EDA00A59F2E /* MZAppDelegate.h */,
+				AAF35C0F17532EDA00A59F2E /* MZAppDelegate.m */,
+				AAF35C1717532EDA00A59F2E /* MZViewController.h */,
+				AAF35C1817532EDA00A59F2E /* MZViewController.m */,
+				AAF35C1A17532EDA00A59F2E /* MZViewController.xib */,
+				AAF35C0617532EDA00A59F2E /* Supporting Files */,
+			);
+			path = PocoTest;
+			sourceTree = "<group>";
+		};
+		AAF35C0617532EDA00A59F2E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AAF35C0717532EDA00A59F2E /* PocoTest-Info.plist */,
+				AAF35C0817532EDA00A59F2E /* InfoPlist.strings */,
+				AAF35C0B17532EDA00A59F2E /* main.m */,
+				AAF35C0D17532EDA00A59F2E /* PocoTest-Prefix.pch */,
+				AAF35C1117532EDA00A59F2E /* Default.png */,
+				AAF35C1317532EDA00A59F2E /* Default@2x.png */,
+				AAF35C1517532EDA00A59F2E /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AAF35BFB17532ED900A59F2E /* PocoTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AAF35C1F17532EDA00A59F2E /* Build configuration list for PBXNativeTarget "PocoTest" */;
+			buildPhases = (
+				AAF35BF817532ED900A59F2E /* Sources */,
+				AAF35BF917532ED900A59F2E /* Frameworks */,
+				AAF35BFA17532ED900A59F2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PocoTest;
+			productName = PocoTest;
+			productReference = AAF35BFC17532ED900A59F2E /* PocoTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AAF35BF417532ED900A59F2E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = MZ;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = uistrong;
+			};
+			buildConfigurationList = AAF35BF717532ED900A59F2E /* Build configuration list for PBXProject "PocoTest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AAF35BF317532ED900A59F2E;
+			productRefGroup = AAF35BFD17532ED900A59F2E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AAF35BFB17532ED900A59F2E /* PocoTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AAF35BFA17532ED900A59F2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAF35C0A17532EDA00A59F2E /* InfoPlist.strings in Resources */,
+				AAF35C1217532EDA00A59F2E /* Default.png in Resources */,
+				AAF35C1417532EDA00A59F2E /* Default@2x.png in Resources */,
+				AAF35C1617532EDA00A59F2E /* Default-568h@2x.png in Resources */,
+				AAF35C1C17532EDA00A59F2E /* MZViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AAF35BF817532ED900A59F2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAF35C0C17532EDA00A59F2E /* main.m in Sources */,
+				AAF35C1017532EDA00A59F2E /* MZAppDelegate.m in Sources */,
+				AAF35C1917532EDA00A59F2E /* MZViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AAF35C0817532EDA00A59F2E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AAF35C0917532EDA00A59F2E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		AAF35C1A17532EDA00A59F2E /* MZViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AAF35C1B17532EDA00A59F2E /* en */,
+			);
+			name = MZViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AAF35C1D17532EDA00A59F2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		AAF35C1E17532EDA00A59F2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AAF35C2017532EDA00A59F2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PocoTest/PocoTest-Prefix.pch";
+				INFOPLIST_FILE = "PocoTest/PocoTest-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		AAF35C2117532EDA00A59F2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PocoTest/PocoTest-Prefix.pch";
+				INFOPLIST_FILE = "PocoTest/PocoTest-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AAF35BF717532ED900A59F2E /* Build configuration list for PBXProject "PocoTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAF35C1D17532EDA00A59F2E /* Debug */,
+				AAF35C1E17532EDA00A59F2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AAF35C1F17532EDA00A59F2E /* Build configuration list for PBXNativeTarget "PocoTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAF35C2017532EDA00A59F2E /* Debug */,
+				AAF35C2117532EDA00A59F2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AAF35BF417532ED900A59F2E /* Project object */;
+}
