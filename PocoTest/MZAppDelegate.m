@@ -9,11 +9,23 @@
 #import "MZAppDelegate.h"
 
 #import "MZViewController.h"
+#include "Poco/Unicode.h"
+#include "Poco/Net/DNS.h"
 
 @implementation MZAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    using namespace Poco;
+    bool bRet = Unicode::isUpper('c');
+    printf("isUpper('c') : %d", bRet?1:0);
+    
+    std::string hostName = Net::DNS::hostName();
+    NSLog(@"host name :%s", hostName.c_str());
+    
+    
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.viewController = [[MZViewController alloc] initWithNibName:@"MZViewController" bundle:nil];
