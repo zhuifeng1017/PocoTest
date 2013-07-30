@@ -11,20 +11,54 @@
 #import "MZViewController.h"
 #include "Poco/Unicode.h"
 #include "Poco/Net/DNS.h"
+//#include "Poco/Net/Socket.h"
+#include "Poco/Net/StreamSocket.h"
+
+#include <iostream>
 
 @implementation MZAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
     using namespace Poco;
-    bool bRet = Unicode::isUpper('c');
-    printf("isUpper('c') : %d", bRet?1:0);
+    using namespace Poco::Net;
     
-    std::string hostName = Net::DNS::hostName();
-    NSLog(@"host name :%s", hostName.c_str());
+
+    StreamSocket sk;
+    try{
+        sk.connect(SocketAddress("192.168.108.253", 80), Timespan(6, 0));
+    }catch(Poco::Exception& exp){
+        std::cout <<"code:" << exp.what() << "-msg:" << exp.message() << std::endl;
+    }
     
-    
+    try{
+        UInt8 buffer[2048] = "GET / HTTP/1.0\r\nUser-Agent: Mozilla/5.0\r\n\r\n";
+        int nSendLen = strlen((char*)buffer);
+        int nHasSendLen = 0;
+        while (nHasSendLen != nSendLen) {
+            int nLen = sk.sendBytes(buffer+nHasSendLen, nSendLen-nHasSendLen);
+            nHasSendLen += nLen;
+        }
+        
+        int nRecvLen = 0;
+        do {
+            Socket::SocketList readList, writeList, expList;
+            readList.push_back(sk);
+            Socket::select(readList, writeList, expList, Timespan(3, 0));
+            
+            if (readList.size()) {
+                nRecvLen = sk.receiveBytes(buffer, 1024);
+                std::cout << nSendLen << " -- " << nRecvLen << std::endl;
+                buffer[nRecvLen] = 0;
+                std::cout << buffer << std::endl;
+            }
+        } while (nRecvLen!=0);
+        
+        sk.close();
+    }catch(Poco::Exception& exp){
+        std::cout <<"code:" << exp.code() << "-msg:" << exp.message() << std::endl;
+    }
+
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
