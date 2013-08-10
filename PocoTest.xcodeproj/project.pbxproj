@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA53682517B630C30092E641 /* CSimpleSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA53682317B630C30092E641 /* CSimpleSocket.cpp */; };
+		AA53683017B634000092E641 /* CSimpleSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA53682E17B634000092E641 /* CSimpleSocket.cpp */; };
 		AAF35C0017532ED900A59F2E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF35BFF17532ED900A59F2E /* UIKit.framework */; };
 		AAF35C0217532ED900A59F2E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF35C0117532ED900A59F2E /* Foundation.framework */; };
 		AAF35C0417532ED900A59F2E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF35C0317532ED900A59F2E /* CoreGraphics.framework */; };
@@ -24,8 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AA53682317B630C30092E641 /* CSimpleSocket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CSimpleSocket.cpp; sourceTree = "<group>"; };
-		AA53682417B630C30092E641 /* CSimpleSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSimpleSocket.h; sourceTree = "<group>"; };
+		AA53682E17B634000092E641 /* CSimpleSocket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CSimpleSocket.cpp; path = test/CSimpleSocket.cpp; sourceTree = SOURCE_ROOT; };
+		AA53682F17B634000092E641 /* CSimpleSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSimpleSocket.h; path = test/CSimpleSocket.h; sourceTree = SOURCE_ROOT; };
 		AAD59840175364C5009D218B /* AbstractObserver.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AbstractObserver.cpp; sourceTree = "<group>"; };
 		AAD59841175364C5009D218B /* ActiveDispatcher.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ActiveDispatcher.cpp; sourceTree = "<group>"; };
 		AAD59842175364C5009D218B /* adler32.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = adler32.c; sourceTree = "<group>"; };
@@ -824,8 +824,8 @@
 		AA53682217B630920092E641 /* test */ = {
 			isa = PBXGroup;
 			children = (
-				AA53682317B630C30092E641 /* CSimpleSocket.cpp */,
-				AA53682417B630C30092E641 /* CSimpleSocket.h */,
+				AA53682E17B634000092E641 /* CSimpleSocket.cpp */,
+				AA53682F17B634000092E641 /* CSimpleSocket.h */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -1756,7 +1756,7 @@
 				AAF35C0C17532EDA00A59F2E /* main.m in Sources */,
 				AAF35C1017532EDA00A59F2E /* MZAppDelegate.m in Sources */,
 				AAF35C1917532EDA00A59F2E /* MZViewController.m in Sources */,
-				AA53682517B630C30092E641 /* CSimpleSocket.cpp in Sources */,
+				AA53683017B634000092E641 /* CSimpleSocket.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

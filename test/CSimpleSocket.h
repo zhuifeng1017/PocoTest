@@ -12,6 +12,12 @@
 #include <iostream>
 
 
+class CSimpleSocket {
+public:
+    void test();
+    
+  
+};
 
 
 #endif /* defined(__PocoTest__CSimpleSocket__) */
