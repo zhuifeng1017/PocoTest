@@ -1,4 +1,4 @@
-//
+﻿//
 //  CSimpleSocket.cpp
 //  PocoTest
 //
@@ -18,10 +18,10 @@ void CSimpleSocket::test(){
     using namespace Poco::Net;
     
     StreamSocket sk;
-    BOOL connected = NO;
+    bool connected = false;
     try{
         sk.connect(SocketAddress("s1.goyou.cn", 80), Timespan(6, 0));
-        connected = YES;
+        connected = true;
     }catch(Poco::Exception& exp){
         std::cout <<"code:" << exp.what() << "-msg:" << exp.message() << std::endl;
     }

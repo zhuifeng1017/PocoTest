@@ -1,4 +1,4 @@
-//
+﻿//
 //  CSimpleSocket.h
 //  PocoTest
 //
