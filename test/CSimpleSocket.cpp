@@ -23,7 +23,7 @@ void CSimpleSocket::test(){
         sk.connect(SocketAddress("s1.goyou.cn", 80), Timespan(6, 0));
         connected = true;
     }catch(Poco::Exception& exp){
-        std::cout <<"code:" << exp.what() << "-msg:" << exp.message() << std::endl;
+        std::cout << exp.displayText() << std::endl;
     }
     
     if (connected) {
@@ -41,18 +41,19 @@ void CSimpleSocket::test(){
                 Socket::SocketList readList, writeList, expList;
                 readList.push_back(sk);
                 Socket::select(readList, writeList, expList, Timespan(3, 0));
-                
+
+                nRecvLen = 0;
                 if (readList.size()) {
                     nRecvLen = sk.receiveBytes(buffer, 1024);
                     std::cout << nSendLen << " -- " << nRecvLen << std::endl;
                     buffer[nRecvLen] = 0;
                     std::cout << buffer << std::endl;
                 }
-            } while (nRecvLen!=0);
+            } while (nRecvLen>0);
             
             sk.close();
         }catch(Poco::Exception& exp){
-            std::cout <<"code:" << exp.code() << "-msg:" << exp.message() << std::endl;
+            std::cout <<exp.displayText() << std::endl;
         }
     }
 }
