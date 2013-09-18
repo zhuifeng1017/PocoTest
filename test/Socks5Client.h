@@ -9,7 +9,7 @@ class CSocks5Client
 {
 public:
 	CSocks5Client(const char *ipAddr,  unsigned short port, const char *digest);
-	~CSocks5Client(void);
+	virtual ~CSocks5Client(void);
 	
 	bool GetSocket(Poco::Net::StreamSocket &sk);
 
