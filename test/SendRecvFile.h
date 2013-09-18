@@ -1,4 +1,6 @@
-#pragma once
+#ifndef __PocoTest__CSendRecvFile__
+#define __PocoTest__CSendRecvFile__
+
 #include "Poco/Net/StreamSocket.h"
 
 class CSendRecvFile{
@@ -10,3 +12,5 @@ public:
 	static bool recvFile(Poco::Net::StreamSocket &sk);
 
 };
+
+#endif /* defined(__PocoTest__CSendRecvFile__) */

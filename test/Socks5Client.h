@@ -1,4 +1,6 @@
-#pragma once
+#ifndef __PocoTest__CSocks5Client__
+#define __PocoTest__CSocks5Client__
+
 #include <string>
 #include "Poco/Net/Net.h"
 #include "Poco/Net/StreamSocket.h"
@@ -21,3 +23,5 @@ private:
 	std::string _digest;
 	std::string _encryptDigest;
 };
+
+#endif /* defined(__PocoTest__CSocks5Client__) */
