@@ -17,7 +17,7 @@ CSendRecvFile::~CSendRecvFile(void)
 {
 }
 
-void CSendRecvFile::sendFile(Poco::Net::StreamSocket &sk, const char* filepath){
+void CSendRecvFile::SendFile(Poco::Net::StreamSocket &sk, const char* filepath){
 	using namespace std;
 
 	UInt8 buffer[8192];
@@ -61,7 +61,7 @@ void CSendRecvFile::sendFile(Poco::Net::StreamSocket &sk, const char* filepath){
 	}
 }
 
-bool CSendRecvFile::recvFile(Poco::Net::StreamSocket &sk){
+bool CSendRecvFile::RecvFile(Poco::Net::StreamSocket &sk){
 	using namespace std;
 	// wait for recv data
 	Socket::SocketList readList, writeList, expList;

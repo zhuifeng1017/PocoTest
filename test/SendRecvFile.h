@@ -8,8 +8,8 @@ public:
 	CSendRecvFile(void);
 	~CSendRecvFile(void);
 
-	static void sendFile(Poco::Net::StreamSocket &sk, const char* filepath);
-	static bool recvFile(Poco::Net::StreamSocket &sk);
+	static void SendFile(Poco::Net::StreamSocket &sk, const char* filepath);
+	static bool RecvFile(Poco::Net::StreamSocket &sk);
 
 };
 
