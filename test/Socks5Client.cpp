@@ -37,9 +37,9 @@ bool CSocks5Client::Establish(Poco::Net::StreamSocket &sk){
 	using namespace Poco;
 	using namespace Poco::Net;
 	UInt8 cmd[3];
-	cmd[0] = (UInt8) 0x05; // protocol version 5
-	cmd[1] = (UInt8) 0x01; // number of authentication methods supported
-	cmd[2] = (UInt8) 0x00; // authentication method: no-authentication required\
+	cmd[0] = 0x05; // protocol version 5
+	cmd[1] = 0x01; // number of authentication methods supported
+	cmd[2] = 0x00; // authentication method: no-authentication required\
 
 	int nHasSendLen = sk.sendBytes(cmd, 3);
 	if (nHasSendLen != 3)
@@ -65,7 +65,7 @@ bool CSocks5Client::Establish(Poco::Net::StreamSocket &sk){
 	}
 
 	// check if server responded with correct version and no-authentication method
-	if (response[0] != (UInt8) 0x05 || response[1] != (UInt8) 0x00) {
+	if (response[0] !=  0x05 || response[1] !=  0x00) {
 		return false;
 	}
 
@@ -110,7 +110,7 @@ bool CSocks5Client::Establish(Poco::Net::StreamSocket &sk){
 	responseBuffLen = 5 + addressLength +  2;
 
 	// verify response
-	requestBuff[1] = (UInt8) 0x00; // set expected return status to 0
+	requestBuff[1] = 0x00; // set expected return status to 0
 	if (requestBuffLen != responseBuffLen)
 	{
 		return false;
@@ -144,8 +144,8 @@ bool CSocks5Client::CreateSocks5ConnectRequest(Poco::UInt8 *requestBuff,  Poco::
 	requestBuff[3] =  0x03; // address type (3 - domain name)
 	requestBuff[4] = _encryptDigest.length(); // address length
 	memcpy(&requestBuff[5], _encryptDigest.c_str(), _encryptDigest.length());
-	requestBuff[dataLen - 2] = (UInt8) 0; // address port (2 bytes always 0)
-	requestBuff[dataLen - 1] = (UInt8) 0;
+	requestBuff[dataLen - 2] = 0; // address port (2 bytes always 0)
+	requestBuff[dataLen - 1] = 0;
 	buffLen = dataLen;
 	return true;
 }
