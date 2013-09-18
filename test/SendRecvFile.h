@@ -6,7 +6,7 @@ public:
 	CSendRecvFile(void);
 	~CSendRecvFile(void);
 
-	static void sendFile(Poco::Net::StreamSocket &sk);
+	static void sendFile(Poco::Net::StreamSocket &sk, const char* filepath);
 	static bool recvFile(Poco::Net::StreamSocket &sk);
 
 };

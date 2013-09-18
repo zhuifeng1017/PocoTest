@@ -12,7 +12,7 @@ CSendRecvFile::~CSendRecvFile(void)
 {
 }
 
-void CSendRecvFile::sendFile(Poco::Net::StreamSocket &sk){
+void CSendRecvFile::sendFile(Poco::Net::StreamSocket &sk, const char* filepath){
 	using namespace std;
 
 	UInt8 buffer[8192];
@@ -20,9 +20,9 @@ void CSendRecvFile::sendFile(Poco::Net::StreamSocket &sk){
 	int total = 0;
 	for (int i=0; i <1; ++i)
 	{
-		const char *filePath = "D:\\汶川地区.mimg";
+		//const char *filePath = "D:\\汶川地区.mimg";
 		//const char *filePath = "e:\\20130917085141.bmp";
-		FILE * file = fopen(filePath, "rb");
+		FILE * file = fopen(filepath, "rb");
 		if (file == NULL)
 			return;
 
