@@ -1,6 +1,8 @@
 #include "SendRecvFile.h"
 #include "Poco/Foundation.h"
 #include "Poco/Net/Net.h"
+#include "Poco/Timespan.h"
+#include "poco/Timestamp.h"
 #include <iostream>
 
 
@@ -67,26 +69,43 @@ bool CSendRecvFile::recvFile(Poco::Net::StreamSocket &sk){
 	// loop recv data
     Poco::UInt8 buffer[8192];
 	int total = 0;
+	int tempTotal = 0;
+	Timestamp start;
+	Timespan::TimeDiff totalCost = 0;
 	while (1)
 	{
-		int nRecvLen = sk.receiveBytes(buffer, 8192);
-		total += nRecvLen;
-		cout << "this recv: " << nRecvLen << "- total length: " << total << endl;
-		if (nRecvLen <=0)
-		{
-			return false;
+		// calc speed
+		for (int i=0; i<10; ++i){
+			int nRecvLen = sk.receiveBytes(buffer, 8192);
+			total += nRecvLen;	
+			tempTotal += nRecvLen;
+			//cout << "this recv: " << nRecvLen << "- total length: " << total << endl;
+			if (nRecvLen <=0)
+			{
+				return false;
+			}
+
+			readList.clear();
+			writeList.clear(); 
+			expList.clear();
+			readList.push_back(sk);
+			int rc = Socket::select(readList, writeList, expList, Timespan(30, 0)); // 30 sec
+			if (rc <=0 || readList.size()<=0)
+			{
+				return false;
+			}
 		}
 
-		readList.clear();
-		writeList.clear(); 
-		expList.clear();
-		readList.push_back(sk);
-		int rc = Socket::select(readList, writeList, expList, Timespan(30, 0)); // 30 sec
-		if (rc <=0 || readList.size()<=0)
+		Poco::Timespan elapsed = start.elapsed();
+		Timespan::TimeDiff cost = elapsed.totalMilliseconds();
+		if (cost>500) // more than 500 millisec calc one time
 		{
-			return false;
+			totalCost += cost;
+			int speed = tempTotal/cost;
+			cout <<"totalCost: " << totalCost/1000.0f <<  " s-- recv speed:" << speed << " kb/s" << endl;
+			tempTotal = 0;
+			start.update(); // reset timer count
 		}
 	}
-
 	return true;
 }
