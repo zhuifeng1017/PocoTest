@@ -1,5 +1,6 @@
 #include "Socks5Client.h"
 #include "Poco/Net/Socket.h"
+#include "Poco/SHA1Engine.h"
 
 CSocks5Client::CSocks5Client(const char *ipAddr,  unsigned short port, const char *digest)
 {
@@ -119,8 +120,18 @@ bool CSocks5Client::Establish(Poco::Net::StreamSocket &sk){
 bool CSocks5Client::CreateSocks5ConnectRequest(Poco::UInt8 *requestBuff,  Poco::UInt32 &buffLen){
 	using namespace Poco;
 	using namespace Poco::Net;
+	using namespace std;
 
-	UInt32 dataLen = 7 + _digest.length();
+	// encrypt digest
+	if (_encryptDigest.length() == 0)
+	{
+		SHA1Engine engine;
+		engine.update(_digest);
+		_encryptDigest = SHA1Engine::digestToHex(engine.digest());
+		cout << "_encryptDigest : " << _encryptDigest << endl;
+	}
+
+	UInt32 dataLen = 7 + _encryptDigest.length();
 	if (buffLen < dataLen)
 	{
 		return false;
@@ -130,8 +141,8 @@ bool CSocks5Client::CreateSocks5ConnectRequest(Poco::UInt8 *requestBuff,  Poco::
 	requestBuff[1] = (UInt8) 0x01; // command (1 - connect)
 	requestBuff[2] = (UInt8) 0x00; // reserved byte (always 0)
 	requestBuff[3] = (UInt8) 0x03; // address type (3 - domain name)
-	requestBuff[4] = (UInt8) _digest.length(); // address length
-	memcpy(&requestBuff[5], _digest.c_str(), _digest.length());
+	requestBuff[4] = (UInt8) _encryptDigest.length(); // address length
+	memcpy(&requestBuff[5], _encryptDigest.c_str(), _encryptDigest.length());
 	requestBuff[dataLen - 2] = (UInt8) 0; // address port (2 bytes always 0)
 	requestBuff[dataLen - 1] = (UInt8) 0;
 	buffLen = dataLen;

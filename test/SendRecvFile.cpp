@@ -12,7 +12,6 @@ CSendRecvFile::~CSendRecvFile(void)
 {
 }
 
-#if 1
 void CSendRecvFile::sendFile(Poco::Net::StreamSocket &sk){
 	using namespace std;
 
@@ -88,4 +87,3 @@ bool CSendRecvFile::recvFile(Poco::Net::StreamSocket &sk){
 
 	return true;
 }
-#endif

@@ -19,4 +19,5 @@ private:
 	std::string _ipAddr;
 	unsigned short _port;
 	std::string _digest;
+	std::string _encryptDigest;
 };
