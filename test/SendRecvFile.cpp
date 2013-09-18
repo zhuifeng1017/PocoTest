@@ -42,10 +42,16 @@ void CSendRecvFile::sendFile(Poco::Net::StreamSocket &sk, const char* filepath){
 			if( ferror( file)) {
 				cout << "read file error" << endl;
 			}
+
 			// ·¢ËÍ
-			int sendCount = sk.sendBytes(buffer, count);
-			if (sendCount != count)
-			{
+			try{
+				int sendCount = sk.sendBytes(buffer, count);
+				if (sendCount != count)
+				{
+					break;
+				}
+			}catch(Poco::Exception& exp){
+				std::cout << "Poco::Exception: " <<  exp.displayText() << std::endl;
 				break;
 			}
 			total += count;
