@@ -8,17 +8,54 @@
 
 #import "MZAppDelegate.h"
 #import "MZViewController.h"
-#include "CSimpleSocket.h"
 
 #include <iostream>
+#include "CSimpleSocket.h"
+#include "Socks5Client.h"
+#include "SendRecvFile.h"
+
 
 @implementation MZAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    CSimpleSocket simple;
-    simple.test();
+//    CSimpleSocket simple;
+//    simple.test();
+
+    using namespace std;
+	using namespace Poco;
+	using namespace Poco::Net;
+    
+    //03de6c570bfe24bfc328ccd7ca46b76eadaf4334
+	//SHA1Engine engine;
+	//engine.update("abcde");
+	//cout << "_encryptDigest : " <<  SHA1Engine::digestToHex(engine.digest()) << endl;
+    
+	CSocks5Client skClient("192.168.108.213", 7778, "abcde");
+	StreamSocket sk;
+	bool ret = skClient.GetSocket(sk);
+	if (!ret)
+	{
+		goto tagend;
+	}
+    
+	if (1)
+	{
+		cout << "begin recv data" << endl;
+		CSendRecvFile::recvFile(sk);
+	}else
+	{
+		cout << "begin send data" << endl;
+		//const char *filePath = "D:\\„Î¥®µÿ«¯.mimg";
+		const char *filePath = "e:\\20130917085141.bmp";
+		CSendRecvFile::sendFile(sk, filePath);
+	}
+	sk.close();
+    
+tagend:
+	cout << "press any key to exit" << endl;
+    
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA1FD8D017E93F7C0080D0B3 /* SendRecvFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA1FD8CC17E93F7C0080D0B3 /* SendRecvFile.cpp */; };
+		AA1FD8D117E93F7C0080D0B3 /* Socks5Client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA1FD8CE17E93F7C0080D0B3 /* Socks5Client.cpp */; };
 		AA53683017B634000092E641 /* CSimpleSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA53682E17B634000092E641 /* CSimpleSocket.cpp */; };
 		AAF35C0017532ED900A59F2E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF35BFF17532ED900A59F2E /* UIKit.framework */; };
 		AAF35C0217532ED900A59F2E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF35C0117532ED900A59F2E /* Foundation.framework */; };
@@ -24,6 +26,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA1FD8CC17E93F7C0080D0B3 /* SendRecvFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SendRecvFile.cpp; path = test/SendRecvFile.cpp; sourceTree = SOURCE_ROOT; };
+		AA1FD8CD17E93F7C0080D0B3 /* SendRecvFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SendRecvFile.h; path = test/SendRecvFile.h; sourceTree = SOURCE_ROOT; };
+		AA1FD8CE17E93F7C0080D0B3 /* Socks5Client.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Socks5Client.cpp; path = test/Socks5Client.cpp; sourceTree = SOURCE_ROOT; };
+		AA1FD8CF17E93F7C0080D0B3 /* Socks5Client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Socks5Client.h; path = test/Socks5Client.h; sourceTree = SOURCE_ROOT; };
 		AA53682E17B634000092E641 /* CSimpleSocket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CSimpleSocket.cpp; path = test/CSimpleSocket.cpp; sourceTree = SOURCE_ROOT; };
 		AA53682F17B634000092E641 /* CSimpleSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSimpleSocket.h; path = test/CSimpleSocket.h; sourceTree = SOURCE_ROOT; };
 		AAD59840175364C5009D218B /* AbstractObserver.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AbstractObserver.cpp; sourceTree = "<group>"; };
@@ -824,6 +830,10 @@
 		AA53682217B630920092E641 /* test */ = {
 			isa = PBXGroup;
 			children = (
+				AA1FD8CC17E93F7C0080D0B3 /* SendRecvFile.cpp */,
+				AA1FD8CD17E93F7C0080D0B3 /* SendRecvFile.h */,
+				AA1FD8CE17E93F7C0080D0B3 /* Socks5Client.cpp */,
+				AA1FD8CF17E93F7C0080D0B3 /* Socks5Client.h */,
 				AA53682E17B634000092E641 /* CSimpleSocket.cpp */,
 				AA53682F17B634000092E641 /* CSimpleSocket.h */,
 			);
@@ -1757,6 +1767,8 @@
 				AAF35C1017532EDA00A59F2E /* MZAppDelegate.m in Sources */,
 				AAF35C1917532EDA00A59F2E /* MZViewController.m in Sources */,
 				AA53683017B634000092E641 /* CSimpleSocket.cpp in Sources */,
+				AA1FD8D017E93F7C0080D0B3 /* SendRecvFile.cpp in Sources */,
+				AA1FD8D117E93F7C0080D0B3 /* Socks5Client.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1853,6 +1865,11 @@
 				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PocoTest/PocoTest-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"APPLE=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "PocoTest/PocoTest-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;

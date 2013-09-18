@@ -9,9 +9,6 @@
 #ifndef __PocoTest__CSimpleSocket__
 #define __PocoTest__CSimpleSocket__
 
-#include <iostream>
-
-
 class CSimpleSocket {
 public:
     void test();

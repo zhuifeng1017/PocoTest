@@ -7,10 +7,9 @@
 //
 
 #include "CSimpleSocket.h"
-
+#include <iostream>
 #include "Poco/Unicode.h"
 #include "Poco/Net/DNS.h"
-//#include "Poco/Net/Socket.h"
 #include "Poco/Net/StreamSocket.h"
 
 void CSimpleSocket::test(){

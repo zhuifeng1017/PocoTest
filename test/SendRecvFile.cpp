@@ -1,5 +1,8 @@
 #include "SendRecvFile.h"
+#include "Poco/Foundation.h"
 #include "Poco/Net/Net.h"
+#include <iostream>
+
 
 using namespace Poco;
 using namespace Poco::Net;
@@ -62,13 +65,13 @@ bool CSendRecvFile::recvFile(Poco::Net::StreamSocket &sk){
 	}
 
 	// loop recv data
-	UINT8 buffer[8192];
+    Poco::UInt8 buffer[8192];
 	int total = 0;
 	while (1)
 	{
 		int nRecvLen = sk.receiveBytes(buffer, 8192);
 		total += nRecvLen;
-		cout << "total length: " << total << endl;
+		cout << "this recv: " << nRecvLen << "- total length: " << total << endl;
 		if (nRecvLen <=0)
 		{
 			return false;
